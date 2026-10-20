@@ -18,7 +18,7 @@ class JwtCppConan(ConanFile):
         return tools.Version(self.version) >= "0.5.0"
     def requirements(self):
         if self.settings.os == 'Android':
-            self.requires("OpenSSL/1.1.1w@dn/stable")
+            self.requires("OpenSSL/3.5.9@dn/stable")
         else:
             self.requires("OpenSSL/1.1.1@dn/stable")
         if not self._supports_generic_json:
