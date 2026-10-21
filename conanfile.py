@@ -17,10 +17,7 @@ class JwtCppConan(ConanFile):
     def _supports_generic_json(self):
         return tools.Version(self.version) >= "0.5.0"
     def requirements(self):
-        if self.settings.os == 'Android':
-            self.requires("OpenSSL/3.5.9@dn/stable")
-        else:
-            self.requires("OpenSSL/1.1.1@dn/stable")
+        self.requires("OpenSSL/3.5.9@dn/stable")
         if not self._supports_generic_json:
             self.requires("picojson/1.3.0")
     def source(self):
